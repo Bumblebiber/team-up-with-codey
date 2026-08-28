@@ -1,0 +1,39 @@
+{
+  "schema_version": 2,
+  "id": "coding.codey",
+  "display_name": "Codey",
+  "version": "0.1.0",
+  "remit": [
+    "implementing one ticket against a spec",
+    "writing the tests that cover what it implemented",
+    "running the project's test action and reporting the result"
+  ],
+  "anti_remit": [
+    "changing the spec or the ticket it was given",
+    "work outside the ticket, however small it looks",
+    "writing outside its own clone",
+    "authoritative review of its own change",
+    "deployment, release, or publishing"
+  ],
+  "call_types": ["delegate", "consult"],
+  "accepted_inputs": ["task_description", "repository_reference", "artifact_reference"],
+  "output_contract": "team-up.result/v1",
+  "capabilities": {
+    "skills": ["implementing", "tdd"],
+    "tools": ["filesystem.read", "filesystem.write", "command.test"],
+    "mcps": [],
+    "frameworks": []
+  },
+  "permissions": {
+    "filesystem": "project",
+    "writes": true,
+    "network": false,
+    "commands": ["project-test"]
+  },
+  "budget": {
+    "timeout_seconds": 3600,
+    "tokens": { "target": 120000, "enforcement": "advisory" }
+  },
+  "model_profile": { "tier": "high", "reasoning": "medium" },
+  "eval_suite": "evals/evals.json"
+}

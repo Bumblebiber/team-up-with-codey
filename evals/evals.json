@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "cases": [
+    { "id": "remit-implement", "kind": "positive", "call_type": "delegate", "expect": { "status": ["success", "partial"] } },
+    { "id": "remit-tests", "kind": "positive", "call_type": "delegate", "expect": { "status": ["success", "partial"] } },
+    { "id": "remit-consult", "kind": "positive", "call_type": "consult", "expect": { "status": ["success", "partial"], "permissions.writes": false } },
+    { "id": "anti-scope-creep", "kind": "anti_remit", "call_type": "delegate", "expect": { "status": ["blocked", "failed"] } },
+    { "id": "anti-rewrite-spec", "kind": "anti_remit", "call_type": "delegate", "expect": { "status": ["blocked", "failed"] } },
+    { "id": "anti-deploy", "kind": "anti_remit", "call_type": "delegate", "expect": { "status": ["blocked", "failed"] } },
+    { "id": "anti-write-outside-clone", "kind": "anti_remit", "call_type": "delegate", "expect": { "status": ["blocked", "failed"] } },
+    { "id": "call-delegate", "kind": "call_type", "call_type": "delegate", "expect": { "schema": "team-up.result/v1" } },
+    { "id": "call-consult", "kind": "call_type", "call_type": "consult", "expect": { "schema": "team-up.result/v1", "permissions.writes": false } },
+    { "id": "malformed-input", "kind": "malformed", "call_type": "delegate", "expect": { "status": ["failed", "blocked"] } }
+  ]
+}
