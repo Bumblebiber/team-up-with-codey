@@ -2,7 +2,7 @@
   "schema_version": 2,
   "id": "coding.codey",
   "display_name": "Codey",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "remit": [
     "implementing one ticket against a spec",
     "writing the tests that cover what it implemented",

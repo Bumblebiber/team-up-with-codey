@@ -34,7 +34,7 @@ engages. Treat it as a trusted process, not a contained one.
 git clone https://github.com/Bumblebiber/team-up-with-codey
 team-up specialist inspect ./team-up-with-codey     # read-only, always first
 team-up specialist install ./team-up-with-codey
-team-up specialist approve coding.codey@0.1.0 --project /abs/path/to/project
+team-up specialist approve coding.codey@0.1.1 --project /abs/path/to/project
 ```
 
 Approval needs a `.team-up/commands.json` in that project declaring the
