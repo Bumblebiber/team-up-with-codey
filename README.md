@@ -34,7 +34,7 @@ engages. Treat it as a trusted process, not a contained one.
 git clone https://github.com/Bumblebiber/team-up-with-codey
 team-up specialist inspect ./team-up-with-codey     # read-only, always first
 team-up specialist install ./team-up-with-codey
-team-up specialist approve coding.codey@0.1.1 --project /abs/path/to/project
+team-up specialist approve coding.codey@0.1.2 --project /abs/path/to/project
 ```
 
 Approval needs a `.team-up/commands.json` in that project declaring the
@@ -57,6 +57,21 @@ Codey works in needs its own:
 
 The argv is fixed and takes no arguments from the specialist — that is the
 point of the command broker, which also denies the native shell.
+
+## Model profile
+
+`frontier` / `medium`. The tier is deliberate and so is the effort: a coding
+specialist gets the strongest model available and a moderate reasoning budget,
+because effort is the cheaper lever to turn down than the model is.
+
+Earlier versions asked for `high`, which was wrong twice over. It resolved to
+nothing on a host where every `high` cell needs a harness whose context
+isolation is unverified, and where it did resolve, the mid-tier alternative was
+a model this specialist should not be run on.
+
+If your roster has better work-horse cells than the Claude line, override the
+profile per host rather than editing the package — `resolveProfile` reads
+`roster.specialists["coding.codey"].model_profile` before the manifest.
 
 ## Permissions
 

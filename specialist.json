@@ -2,7 +2,7 @@
   "schema_version": 2,
   "id": "coding.codey",
   "display_name": "Codey",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "remit": [
     "implementing one ticket against a spec",
     "writing the tests that cover what it implemented",
@@ -15,12 +15,26 @@
     "authoritative review of its own change",
     "deployment, release, or publishing"
   ],
-  "call_types": ["delegate", "consult"],
-  "accepted_inputs": ["task_description", "repository_reference", "artifact_reference"],
+  "call_types": [
+    "delegate",
+    "consult"
+  ],
+  "accepted_inputs": [
+    "task_description",
+    "repository_reference",
+    "artifact_reference"
+  ],
   "output_contract": "team-up.result/v1",
   "capabilities": {
-    "skills": ["implementing", "tdd"],
-    "tools": ["filesystem.read", "filesystem.write", "command.test"],
+    "skills": [
+      "implementing",
+      "tdd"
+    ],
+    "tools": [
+      "filesystem.read",
+      "filesystem.write",
+      "command.test"
+    ],
     "mcps": [],
     "frameworks": []
   },
@@ -28,12 +42,20 @@
     "filesystem": "project",
     "writes": true,
     "network": false,
-    "commands": ["project-test"]
+    "commands": [
+      "project-test"
+    ]
   },
   "budget": {
     "timeout_seconds": 3600,
-    "tokens": { "target": 120000, "enforcement": "advisory" }
+    "tokens": {
+      "target": 120000,
+      "enforcement": "advisory"
+    }
   },
-  "model_profile": { "tier": "high", "reasoning": "medium" },
+  "model_profile": {
+    "tier": "frontier",
+    "reasoning": "medium"
+  },
   "eval_suite": "evals/evals.json"
 }
